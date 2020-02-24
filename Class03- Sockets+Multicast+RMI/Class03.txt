@@ -1,6 +1,0 @@
-UDP (Data Gram)
-Lecture 3: RMI
-Project 2: Last Exercise of lecture 3
-
-Exam: Create a chat between server and client
-
