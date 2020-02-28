@@ -35,14 +35,18 @@ public class BankClient {
                         name = keyboard.next();
                         System.out.print("Enter the amount: ");
                         amount = keyboard.nextFloat();
+                        System.out.println("===== Bank statement =====");
                         System.out.println(h.createAccount(name, amount));
+                        System.out.println("==========================");
                         break;
                     case 2:
                         System.out.print("Enter the name of the person: ");
                         name = keyboard.next();
                         System.out.print("Enter the account number: ");
                         number = keyboard.nextInt();
+                        System.out.println("===== Bank statement =====");
                         System.out.println(h.getBalance(name, number));
+                        System.out.println("==========================");
                         break;
                     case 3:
                         System.out.print("Enter the name of the person: ");
@@ -51,7 +55,9 @@ public class BankClient {
                         amount = keyboard.nextFloat();
                         System.out.print("Enter the account number: ");
                         number = keyboard.nextInt();
+                        System.out.println("===== Bank statement =====");
                         System.out.println(h.withdraw(name, amount, number));
+                        System.out.println("==========================");
                         break;
                     case 4:
                         System.out.print("Enter the name of the person: ");
@@ -60,7 +66,9 @@ public class BankClient {
                         amount = keyboard.nextFloat();
                         System.out.print("Enter the account number: ");
                         number = keyboard.nextInt();
+                        System.out.println("===== Bank statement =====");
                         System.out.println(h.deposit(name, amount, number));
+                        System.out.println("==========================");
                         break;
                     case 5:
                         System.out.print("Enter the name of the person: ");
@@ -71,7 +79,9 @@ public class BankClient {
                         number = keyboard.nextInt();
                         System.out.print("Enter the account number to transfer: ");
                         int number2 = keyboard.nextInt();
+                        System.out.println("===== Bank statement =====");
                         System.out.println(h.transfer(name, number, number2, amount));
+                        System.out.println("==========================");
                         break;
                     case 6:
                         System.out.println("Exiting bank program.");
