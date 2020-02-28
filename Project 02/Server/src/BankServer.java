@@ -2,7 +2,7 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 
 public class BankServer {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws RemoteException {
 
         try {
             int port = 16790;

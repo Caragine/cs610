@@ -29,6 +29,10 @@ public class BankClient {
                         "\n6) Exit" +
                         "\n ===> Enter your option: ");
                 code = keyboard.nextInt();
+                if (code < 1 || code > 6) {
+                    System.out.println("Try again: ");
+                    code = keyboard.nextInt();
+                }
                 switch (code) {
                     case 1:
                         System.out.print("Enter the name of the person: ");

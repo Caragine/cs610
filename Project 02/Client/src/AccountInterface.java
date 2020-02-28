@@ -24,4 +24,6 @@ public interface AccountInterface extends Remote {
     // There is enough funds. Withdraw and return the new balance.
     public String transfer(String name, int fromAccount,  int toAccount, float amt) throws RemoteException;
 
+    // public String[] getAccounts() throws RemoteException;
+
 }
