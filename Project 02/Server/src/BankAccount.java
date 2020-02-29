@@ -22,9 +22,9 @@ public class BankAccount extends UnicastRemoteObject implements AccountInterface
         accounts.get(index).setName(name);
         accounts.get(index).setBalance(balance);
         index++;
-        return "AccountNo: " + accounts.get(accounts.size()-1).getAccountNo() +
-                "\nAccountName: " + accounts.get(accounts.size()-1).getName() +
-                "\nBalance: " + accounts.get(accounts.size()-1).getBalance();
+        return "AccountNo: " + accounts.get(index-1).getAccountNo() +
+                "\nAccountName: " + accounts.get(index-1).getName() +
+                "\nBalance: " + accounts.get(index-1).getBalance();
     }
 
     public String getBalance(String name, int accountNo) throws RemoteException {
@@ -35,7 +35,7 @@ public class BankAccount extends UnicastRemoteObject implements AccountInterface
                 string = accounts.get(i).getName() + "'s account balance is: " + accounts.get(i).getBalance();
                 break;
             } else {
-                string = "Either the name has no account or the account number is wrong";
+                string = "Either the name has no account or the account number is wrong!";
             }
         }
         return string;
@@ -55,6 +55,8 @@ public class BankAccount extends UnicastRemoteObject implements AccountInterface
                 } else {
                     string = "Insufficient funds! Balance: " + accounts.get(i).getBalance();
                 }
+            } else {
+                string = "Either the name has no account or the account number is wrong!";
             }
         }
         return string;
@@ -70,7 +72,7 @@ public class BankAccount extends UnicastRemoteObject implements AccountInterface
                 string = accounts.get(i).getName() + "'s account balance is: " + accounts.get(i).getBalance();
                 break;
             } else {
-                string = "Wrong account number!";
+                string = "Either the name has no account or the account number is wrong!";
             }
         }
         return string;
@@ -92,12 +94,14 @@ public class BankAccount extends UnicastRemoteObject implements AccountInterface
                                     "\n" + accounts.get(i).getName() + "'s account balance is: " + accounts.get(j).getBalance();
                             break;
                         } else {
-                            string = "One of account number is wrong!";
+                            string = "Wrong account number that you're trying to transfer!";
                         }
                     }
                 } else {
                     string = "Insufficient funds! Balance: " + accounts.get(i).getBalance();
                 }
+            } else {
+                string = "Either the name has no account or the account number that you're trying to take from is wrong!";
             }
         }
         return string;
