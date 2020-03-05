@@ -17,6 +17,7 @@ public class Main extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Enumeration<String> htmlParameters = request.getParameterNames();
 		PrintWriter out = response.getWriter();
+		CharSequence characters = "abcdefghijklmnopqrsutvwxyz!?@#$%^&*";
 		
 		while (htmlParameters.hasMoreElements()) {
 			String parameter = (String)htmlParameters.nextElement();
@@ -40,7 +41,7 @@ public class Main extends HttpServlet {
 					out.println("</body></html>");
 					out.close();
 				
-				} else if (!value.matches("[0-9]+") || Integer.parseInt(value) < 0) {
+				} else if (Integer.parseInt(value) < 0 || value.contains(characters)) {
 					out.println("<html><title>Hello</title><body>\n");
 					out.println("<font color = blue>");
 					out.println("<h1>You need to enter a positive integer for your age</h1>\n");

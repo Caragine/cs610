@@ -40,7 +40,23 @@ public class Main extends HttpServlet {
 					out.println("</body></html>");
 					out.close();
 				
-				} else if (!value.matches("[0-9]+") || Integer.parseInt(value) < 0) {
+				} else if (Integer.parseInt(value) >= 18) {
+					out.println("<html><title>Hello</title><body>\n");
+					out.println("<font color = blue>");
+					out.println("<h1>You are eligible to drive</h1>\n");
+					out.println("</font>");
+					out.println("</body></html>");
+					out.close();					
+					
+				} else if (Integer.parseInt(value) >= 0 && Integer.parseInt(value) <= 17) {
+					out.println("<html><title>Hello</title><body>\n");
+					out.println("<font color = blue>");
+					out.println("<h1>You are eligible to drive</h1>\n");
+					out.println("</font>");
+					out.println("</body></html>");
+					out.close();					
+					
+				} else if (!value.matches("0123456789") || Integer.parseInt(value) < 0) {
 					out.println("<html><title>Hello</title><body>\n");
 					out.println("<font color = blue>");
 					out.println("<h1>You need to enter a positive integer for your age</h1>\n");
@@ -48,6 +64,7 @@ public class Main extends HttpServlet {
 					out.println("</body></html>");
 					out.close();
 				
+					/*
 				} else {
 					
 					if (Integer.parseInt(value) > 17) {
@@ -66,6 +83,7 @@ public class Main extends HttpServlet {
 						out.println("</body></html>");
 						out.close();
 					}
+					*/
 				}
 			}
 		}
