@@ -25,10 +25,8 @@ public class Main extends HttpServlet {
 			
 			if (parameter.equalsIgnoreCase("yourName") && value.isEmpty()) {
 				message = "You need to enter your name";
-				break;
-			} 
 			
-			if (parameter.equalsIgnoreCase("yourAge")) {
+			} else if (parameter.equalsIgnoreCase("yourAge")) {
 			
 				if (value.isEmpty()) {
 					message = "You need to enter your age";
@@ -45,7 +43,6 @@ public class Main extends HttpServlet {
 					
 					} else {
 						message = "You are not eligible to drive";
-					
 					}
 				}
 			}

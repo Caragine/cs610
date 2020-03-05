@@ -23,12 +23,15 @@ public class Main extends HttpServlet {
 			String parameter = (String)htmlParameters.nextElement();
 			String value = request.getParameter(parameter);
 			
-			if (parameter.equalsIgnoreCase("yourName") && value.isEmpty()) {
+			if ((parameter.equalsIgnoreCase("yourName") && value.isEmpty()) && (parameter.equalsIgnoreCase("yourAge") && value.isEmpty())) {
+				message = "You need to enter your name and your age";
+				break;
+			
+			} else if (parameter.equalsIgnoreCase("yourName") && value.isEmpty()) {
 				message = "You need to enter your name";
 				break;
-			} 
 			
-			if (parameter.equalsIgnoreCase("yourAge")) {
+			} else if (parameter.equalsIgnoreCase("yourAge")) {
 			
 				if (value.isEmpty()) {
 					message = "You need to enter your age";
@@ -45,7 +48,6 @@ public class Main extends HttpServlet {
 					
 					} else {
 						message = "You are not eligible to drive";
-					
 					}
 				}
 			}
